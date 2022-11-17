@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { 
+    height: 100%; 
+}
+
+body { 
+    margin: 0;
+    font-family: sans-serif;
+    background-image: url("assets/alex-azabache-1JPB9vhF2po-unsplash.jpg"); 
+    background-position: left; 
+    background-size: cover;
+}
+
+.mat-button.mat-accent,
+.mat-icon-button.mat-accent,
+.mat-stroked-button.mat-accent {
+    color: green;
+}
