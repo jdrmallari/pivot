@@ -15,6 +15,7 @@ export class TodoComponent implements OnInit {
   sprint : ITask [] = [];
   inProgress : ITask [] = [];
   completed : ITask [] = [];
+  archived : ITask [] = [];
   updateID : any;
   isEditEnabled : boolean = false;
 
@@ -23,6 +24,46 @@ export class TodoComponent implements OnInit {
   ngOnInit(): void {
     this.todoForm = this.fb.group({
       item : ['', Validators.required]
+    })
+
+    this.tasks.push({
+      description: "Design mise-en-scène for that one realm (Griphos)",
+      isCompleted: false
+    })
+
+    this.tasks.push({
+      description: "Add authentication functionality (Pivot)",
+      isCompleted: false
+    })
+
+    this.tasks.push({
+      description: "Create logo (Tir: Book Recommendation System)",
+      isCompleted: false
+    })
+
+    this.tasks.push({
+      description: "Explore goodreads dataset obtained from Kaggle (Tir: Book Recommendation System)",
+      isCompleted: false
+    })
+
+    this.sprint.push({
+      description: "Add side menu to navigate through separate kanban boards for each project (Pivot)",
+      isCompleted: false
+    })
+
+    this.sprint.push({
+      description: "Draw chess board graphics using JS (Simply Chess)",
+      isCompleted: false
+    })
+
+    this.inProgress.push({
+      description: "Add search functionality for Docs page (Preonbox)",
+      isCompleted: false
+    })
+
+    this.inProgress.push({
+      description: "Write story script for one realm (Griphos)",
+      isCompleted: false
     })
   }
 
@@ -35,19 +76,19 @@ export class TodoComponent implements OnInit {
   }
 
   deleteTask(i : number) {
-    this.tasks.splice(i, 1)
+    this.tasks.splice(i, 1);
   }
 
   deleteSprintTask(i : number) {
-    this.sprint.splice(i, 1)
+    this.sprint.splice(i, 1);
   }
 
   deleteInProgressTask(i : number) {
-    this.inProgress.splice(i, 1)
+    this.inProgress.splice(i, 1);
   }
 
   deleteCompletedTask(i : number) {
-    this.completed.splice(i, 1)
+    this.completed.splice(i, 1);
   }
 
   onEdit(item : ITask, i : number) {
@@ -62,6 +103,11 @@ export class TodoComponent implements OnInit {
     this.todoForm.reset();
     this.updateID = undefined;
     this.isEditEnabled = false;
+  }
+
+  archiveCompletedTask(i : number) {
+    this.archived.push(this.completed[i]);
+    this.completed.splice(i, 1);
   }
 
   drop(event: CdkDragDrop<ITask[]>) {

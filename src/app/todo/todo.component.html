@@ -35,8 +35,8 @@
         <div class="col-md-9 mt-3">
             <div cdkDropListGroup>
                 <div class="row">
-                    <div class="example-container col-md-4">
-                        <h2 class="example-title">Sprint</h2>
+                    <mat-card class="example-container col">
+                        <mat-card-title class="example-title">Sprint</mat-card-title>
 
                         <div
                             cdkDropList
@@ -46,15 +46,15 @@
                             class="example-list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="example-box" *ngFor="let item of sprint; let i = index" cdkDrag>{{item.description}}
-                                <div class="box">
+                                <mat-card-actions class="box">
                                     <button (click)="deleteSprintTask(i)" mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
-                                </div>
+                                </mat-card-actions>
                             </div>
                         </div>
-                    </div>
+                    </mat-card>
 
-                    <div class="example-container col-md-4">
-                        <h2 class="example-title">In Progress</h2>
+                    <mat-card class="example-container col">
+                        <mat-card-title class="example-title">In Progress</mat-card-title>
 
                         <div
                             cdkDropList
@@ -64,15 +64,15 @@
                             class="example-list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="example-box" *ngFor="let item of inProgress; let i = index" cdkDrag>{{item.description}}
-                                <div class="box">
+                                <mat-card-actions class="box">
                                     <button (click)="deleteInProgressTask(i)" mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
-                                </div>
+                                </mat-card-actions>
                             </div>
                         </div>
-                    </div>
+                    </mat-card>
       
-                    <div class="example-container col-md-4">
-                        <h2 class="example-title">Completed</h2>
+                    <mat-card class="example-container col">
+                        <mat-card-title class="example-title">Completed</mat-card-title>
 
                         <div
                             cdkDropList
@@ -82,13 +82,14 @@
                             class="example-list"
                             (cdkDropListDropped)="drop($event)">
                             <div class="example-box" *ngFor="let item of completed; let i = index" cdkDrag>{{item.description}}
-                                <div class="box">
+                                <mat-card-actions class="box">
+                                    <button (click)="archiveCompletedTask(i)" mat-icon-button color="primary"><mat-icon>archive</mat-icon></button>
                                     <button (click)="deleteCompletedTask(i)" mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
                                     <button mat-icon-button color="accent"><mat-icon>check_circle</mat-icon></button>
-                                </div>
+                                </mat-card-actions>
                             </div>
                         </div>
-                    </div>
+                    </mat-card>
                 </div>
             </div>
         </div>
