@@ -15,6 +15,7 @@ import {MatButtonModule} from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {ScrollingModule} from '@angular/cdk/scrolling';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatButtonModule,
     MatInputModule,
     BrowserAnimationsModule,
-    DragDropModule
+    DragDropModule,
+    ScrollingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

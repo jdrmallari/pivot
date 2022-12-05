@@ -1,12 +1,12 @@
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ITask } from '../model/task';
 
 @Component({
   selector: 'app-todo',
   templateUrl: './todo.component.html',
-  styleUrls: ['./todo.component.scss']
+  styleUrls: ['./todo.component.scss'],
 })
 export class TodoComponent implements OnInit {
 
@@ -27,32 +27,47 @@ export class TodoComponent implements OnInit {
     })
 
     this.tasks.push({
+      description: "Add authentication feature (Pivot)",
+      isCompleted: false
+    })
+
+    this.tasks.push({
+      description: "Add side menu to navigate through separate kanban boards for each project (Pivot)",
+      isCompleted: false
+    })
+
+    this.tasks.push({
+      description: "Add color theme toggle (Pivot)",
+      isCompleted: false
+    })
+
+    this.tasks.push({
+      description: "Add change background feature (Pivot)",
+      isCompleted: false
+    })
+
+    this.tasks.push({
+      description: "Create French version of website (Preonbox)",
+      isCompleted: false
+    })
+
+    this.tasks.push({
       description: "Design mise-en-scène for that one realm (Griphos)",
       isCompleted: false
     })
 
-    this.tasks.push({
-      description: "Add authentication functionality (Pivot)",
-      isCompleted: false
-    })
-
-    this.tasks.push({
-      description: "Create logo (Tir: Book Recommendation System)",
-      isCompleted: false
-    })
-
-    this.tasks.push({
+    this.sprint.push({
       description: "Explore goodreads dataset obtained from Kaggle (Tir: Book Recommendation System)",
       isCompleted: false
     })
 
     this.sprint.push({
-      description: "Add side menu to navigate through separate kanban boards for each project (Pivot)",
+      description: "Overlay over each project logo by default, show true logo colours when hovered over if deployed (Preonbox)",
       isCompleted: false
     })
 
     this.sprint.push({
-      description: "Draw chess board graphics using JS (Simply Chess)",
+      description: "Add sub-tasks (Pivot)",
       isCompleted: false
     })
 
@@ -62,8 +77,23 @@ export class TodoComponent implements OnInit {
     })
 
     this.inProgress.push({
-      description: "Write story script for one realm (Griphos)",
+      description: "Make lists scrollable (Pivot)",
       isCompleted: false
+    })
+
+    this.inProgress.push({
+      description: "Draw chess board graphics using JS (Simply Chess)",
+      isCompleted: false
+    })
+
+    this.completed.push({
+      description: "Create logo (Tir: Book Recommendation System)",
+      isCompleted: true
+    })
+
+    this.completed.push({
+      description: "Write story script for one realm (Griphos)",
+      isCompleted: true
     })
   }
 
