@@ -1,4 +1,11 @@
+import { ISubTask } from "./subtask";
+
 export interface ITask {
-    description: string,
-    isCompleted: boolean
+    //id: number,
+    name: string;
+    isCompleted: boolean,
+    type?: string,
+    description?: string,
+    priority?: number,
+    subtasks?: ISubTask[]
 }

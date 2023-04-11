@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{data.name}}</h1>
+<mat-dialog-content class="mat-typography">
+    <mat-divider class="py-2"></mat-divider>
+    <section *ngIf="data.description">
+        <h3>Task Description:</h3>
+        <p>{{data.description}}</p>
+        <mat-divider class="py-2"></mat-divider>
+    </section>
+    <h3 *ngIf="data.subtasks">Subtasks:</h3>
+    <section class="pb-2" *ngFor="let item of data.subtasks">
+        <mat-checkbox *ngIf="item !== null && item !== ''" [(ngModel)]="item.isSubTaskCompleted">
+            <div style="white-space: normal;">{{item.name}}</div>
+        </mat-checkbox>
+    </section>
+</mat-dialog-content>
+<div mat-dialog-actions>
+    <button mat-flat-button color="primary" (click)="closeDialog()">Close</button>
+</div>

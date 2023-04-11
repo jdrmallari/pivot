@@ -1,5 +1,8 @@
 export interface ISubTask {
-    description: string,
-    level: number,
-    isCompleted: boolean
+    //id: number,
+    name: string;
+    isSubTaskCompleted: boolean,
+    description?: string,
+    priority?: number,
+    level: number
 }
